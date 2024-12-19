@@ -1,0 +1,51 @@
+/home/fraidaki/OS/lab05
+
+log
+
+stat: cannot stat 'filename': No such file or directory
+
+  File: source.txt
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 811h/2065d	Inode: 410496      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1311/fraidaki)   Gid: ( 1313/fraidaki)
+Access: 2024-12-19 12:55:31.092606546 +0200
+Modify: 2024-12-19 12:55:31.092606546 +0200
+Change: 2024-12-19 12:55:31.092606546 +0200
+ Birth: -
+
+mv: cannot stat 'oldname.txt': No such file or directory
+
+rm: cannot remove 'file_to_delete.txt': No such file or directory
+
+rmdir: failed to remove 'empty_directory/': No such file or directory
+
+rm: cannot remove 'directory_to_delete/': No such file or directory
+
+./log
+
+Random line 1
+Random line 2
+
+Random line 1
+Random line 2
+
+Random line 1
+Random line 2
+
+Random line 1
+Random line 2
+
+Random line 1
+Random line 2
+./
+./example2.c
+./example4.c
+./lab05.tar.gz
+./example5.c
+./example3.c
+./Makefile
+./example1.c
+./example6.c
+./log
+tar: ./log: file changed as we read it
+tar: .: file changed as we read it
