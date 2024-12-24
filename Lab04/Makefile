@@ -8,7 +8,7 @@ SOURCES = example1.c example2.c example3.c example4.c example5.c
 # Object files
 OBJECTS = example1 example2 example3 example4 example5
 
-# Default target
+# Default target 
 all: $(OBJECTS)
 
 # Targets for each file
