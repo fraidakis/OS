@@ -6,11 +6,13 @@
 #include <sys/wait.h>
 
 // Signal handler for SIGUSR1 in child
-void sigusr1_handler(int sig) {
+void sigusr1_handler(int sig)
+{
     printf("Child received SIGUSR1 (signal %d).\n", sig);
 }
 
-int main() {
+int main()
+{
     pid_t pid;
 
     // Create a pipe for synchronization (optional)
@@ -18,12 +20,17 @@ int main() {
 
     pid = fork();
 
-    if (pid == -1) { // Error
+    if (pid == -1)
+    { // Error
         perror("fork");
         exit(EXIT_FAILURE);
-    } else if (pid == 0) { // Child process
+    }
+
+    else if (pid == 0)
+    { // Child process
         // Register SIGUSR1 handler
-        if (signal(SIGUSR1, sigusr1_handler) == SIG_ERR) {
+        if (signal(SIGUSR1, sigusr1_handler) == SIG_ERR)
+        {
             perror("signal");
             exit(EXIT_FAILURE);
         }
@@ -31,17 +38,22 @@ int main() {
         printf("Child process ID: %d. Waiting for SIGUSR1...\n", getpid());
 
         // Infinite loop to keep child alive
-        while (1) {
+        while (1)
+        {
             pause(); // Wait for signals
         }
-    } else { // Parent process
+    }
+    
+    else
+    { // Parent process
         printf("Parent process ID: %d. Child PID: %d\n", getpid(), pid);
 
         // Sleep for 3 seconds before sending SIGUSR1
         sleep(3);
 
         printf("Parent sending SIGUSR1 to child.\n");
-        if (kill(pid, SIGUSR1) == -1) {
+        if (kill(pid, SIGUSR1) == -1)
+        {
             perror("kill");
             exit(EXIT_FAILURE);
         }
@@ -51,7 +63,8 @@ int main() {
 
         // Terminate the child process
         printf("Parent sending SIGTERM to child.\n");
-        if (kill(pid, SIGTERM) == -1) {
+        if (kill(pid, SIGTERM) == -1)
+        {
             perror("kill");
             exit(EXIT_FAILURE);
         }
