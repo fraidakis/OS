@@ -12,10 +12,10 @@ int add(int *a, int *b, int *c)
 
 int main()
 {
-    int x, y, z;
+    int x = 25, y = 12, z = 2024;
 
-    printf("Enter three numbers: ");
-    scanf("%d %d %d", &x, &y, &z);
+    // printf("Enter three numbers: ");
+    // scanf("%d %d %d", &x, &y, &z);
 
     int sum = add(&x, &y, &z); // Pass by reference
 
